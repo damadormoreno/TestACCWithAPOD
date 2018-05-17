@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.davidamador.testaac.R
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -34,6 +35,12 @@ class ApodFragment : Fragment() {
             Glide.with(this).load(apod?.url).into(imageViewApod)
             tv_title.text = apod?.title
             tv_description.text = apod?.explanation
+        })
+
+        viewModel.apodlist?.observe(this, Observer { apodList ->
+            val result = apodList?.map { it.title }
+
+            Toast.makeText(context,result.toString(), Toast.LENGTH_LONG).show()
         })
 
 

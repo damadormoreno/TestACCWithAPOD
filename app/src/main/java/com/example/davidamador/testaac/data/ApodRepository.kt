@@ -28,4 +28,20 @@ class ApodRepository {
 
         return data
     }
+
+    fun getRemoteListApod(startDate: String, endDate: String): LiveData<List<Apod>> {
+        val data: MutableLiveData<List<Apod>> = MutableLiveData()
+
+        apodApi.getRecentsApods(startDate, endDate).enqueue(object : Callback<List<Apod>> {
+            override fun onFailure(call: Call<List<Apod>>?, t: Throwable?) {
+
+            }
+
+            override fun onResponse(call: Call<List<Apod>>?, response: Response<List<Apod>>?) {
+                data.value = response?.body()
+            }
+        })
+
+        return data
+    }
 }

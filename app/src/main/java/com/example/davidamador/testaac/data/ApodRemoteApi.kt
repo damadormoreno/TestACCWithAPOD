@@ -30,4 +30,8 @@ interface ApodRemoteApi {
     @GET("apod?api_key=DEMO_KEY")
     fun getApod() : Call<Apod>
 
+    @GET("apod?api_key=DEMO_KEY")
+    fun getRecentsApods(@Query("start_date") startDate: String,
+                        @Query("end_date") endDate: String): Call<List<Apod>>
+
 }
