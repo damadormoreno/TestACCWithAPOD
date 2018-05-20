@@ -2,9 +2,6 @@ package com.example.davidamador.testaac.data
 
 
 import com.example.davidamador.testaac.ui.models.Apod
-import com.github.kittinunf.fuel.core.FuelManager
-import com.github.kittinunf.fuel.httpGet
-import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

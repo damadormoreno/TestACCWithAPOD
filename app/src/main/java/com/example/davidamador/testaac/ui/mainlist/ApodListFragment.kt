@@ -1,4 +1,4 @@
-package com.example.davidamador.testaac.ui.main
+package com.example.davidamador.testaac.ui.mainlist
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -12,13 +12,13 @@ import com.bumptech.glide.Glide
 import com.example.davidamador.testaac.R
 import kotlinx.android.synthetic.main.main_fragment.*
 
-class ApodFragment : Fragment() {
+class ApodListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ApodFragment()
+        fun newInstance() = ApodListFragment()
     }
 
-    private lateinit var viewModel: ApodViewModel
+    private lateinit var apodListViewModel: ApodListViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -27,17 +27,17 @@ class ApodFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ApodViewModel::class.java)
-        viewModel.init()
+        apodListViewModel = ViewModelProviders.of(this).get(ApodListViewModel::class.java)
+        apodListViewModel.init()
 
-        viewModel.apod?.observe(this, Observer{ apod ->
+        apodListViewModel.apod?.observe(this, Observer{ apod ->
             // update UI
             Glide.with(this).load(apod?.url).into(imageViewApod)
             tv_title.text = apod?.title
             tv_description.text = apod?.explanation
         })
 
-        viewModel.apodlist?.observe(this, Observer { apodList ->
+        apodListViewModel.apodlist?.observe(this, Observer { apodList ->
             val result = apodList?.map { it.title }
 
             Toast.makeText(context,result.toString(), Toast.LENGTH_LONG).show()
