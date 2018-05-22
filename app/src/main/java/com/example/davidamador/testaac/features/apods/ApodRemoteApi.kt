@@ -1,7 +1,6 @@
-package com.example.davidamador.testaac.data
+package com.example.davidamador.testaac.features.apods
 
 
-import com.example.davidamador.testaac.ui.models.Apod
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

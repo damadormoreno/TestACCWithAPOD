@@ -1,4 +1,4 @@
-package com.example.davidamador.testaac.ui.models
+package com.example.davidamador.testaac.features.apods
 
 data class Apod(
         val copyright: String,

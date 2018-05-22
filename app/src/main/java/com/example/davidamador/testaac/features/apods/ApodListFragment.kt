@@ -1,4 +1,4 @@
-package com.example.davidamador.testaac.ui.mainlist
+package com.example.davidamador.testaac.features.apods
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders

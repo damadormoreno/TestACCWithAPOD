@@ -1,8 +1,8 @@
-package com.example.davidamador.testaac
+package com.example.davidamador.testaac.features.apods
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.davidamador.testaac.ui.mainlist.ApodListFragment
+import com.example.davidamador.testaac.R
 
 class MainActivity : AppCompatActivity() {
 

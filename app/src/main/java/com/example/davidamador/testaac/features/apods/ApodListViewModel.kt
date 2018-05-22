@@ -1,9 +1,7 @@
-package com.example.davidamador.testaac.ui.mainlist
+package com.example.davidamador.testaac.features.apods
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
-import com.example.davidamador.testaac.data.ApodRepository
-import com.example.davidamador.testaac.ui.models.Apod
 
 class ApodListViewModel : ViewModel() {
 
